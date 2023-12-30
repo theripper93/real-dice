@@ -6,6 +6,12 @@ export class RealRoll extends FormApplication {
         this.dieTerms = dieTerms;
         this.dieTerms.forEach(term => {
             term.inputs = Array.from({length: term.number}, () => term.faces)
+            if (term.number > 1 && getSetting("enableTotalBox")) {                
+                term.totalInput = {
+                    min: term.number,
+                    max: term.number * term.faces,
+                }
+            }
             term.index = this.dieTerms.indexOf(term);
         });
         this.promise = new Promise((resolve, reject) => {
@@ -73,7 +79,7 @@ export class RealRoll extends FormApplication {
     }
 
     async getData() {
-        return { dieTerms: this.dieTerms };
+        return { dieTerms: this.dieTerms, multiRow: this.dieTerms.length > 1 };
     }
 
     activateListeners(html) {
@@ -83,6 +89,32 @@ export class RealRoll extends FormApplication {
 
     async _updateObject(event, formData) {
         const data = foundry.utils.expandObject(formData);
+
+        for (const [key, value] of Object.entries(data)) {
+            if (!value.total) continue;
+            const dieTerm = this.dieTerms[parseInt(key)];
+            if (!dieTerm) continue;
+            const total = parseInt(value.total);
+            const diceCount = dieTerm.number;
+            const faceMax = dieTerm.faces;
+            //generate N rolls so that the total is correct
+            const rolls = [];
+            let remaining = total;
+            for (let i = 0; i < diceCount; i++) {
+                const min = Math.max(1, remaining - (diceCount - i - 1) * faceMax);
+                const max = Math.min(faceMax, remaining - (diceCount - i - 1));
+                const roll = Math.floor(Math.random() * (max - min + 1)) + min;
+                rolls.push(roll);
+                remaining -= roll;
+            }
+            delete value.total;
+            for(let i = 0; i < diceCount; i++) {
+                value[i] = rolls[i];
+            }
+
+        }
+
+
         let hasRolledManually = false;
         for (let it = 0; it < this.dieTerms.length; it++) {
             const term = this.dieTerms[it];

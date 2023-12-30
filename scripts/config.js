@@ -28,6 +28,8 @@ export function initConfig() {
 
     Hooks.on("renderSidebarTab", (app, html, data) => {
         if (app.tabName !== "chat") return;
+        const gmOnly = getSetting("gmOnly");
+        if (gmOnly && !game.user.isGM) return;
         const controls = html[0].querySelector(".control-buttons");
         if (!controls) {
             const div = document.createElement("div");

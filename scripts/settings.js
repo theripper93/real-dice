@@ -10,6 +10,14 @@ export function registerSettings() {
 
 
     const settings = {
+        "gmOnly": {
+            name: `${MODULE_ID}.settings.gmOnly.name`,
+            hint: `${MODULE_ID}.settings.gmOnly.hint`,
+            scope: "world",
+            config: true,
+            type: Boolean,
+            default: false,
+        },
         "manualRollMode": {
             name: `${MODULE_ID}.settings.manualRollMode.name`,
             hint: `${MODULE_ID}.settings.manualRollMode.hint`,
@@ -23,6 +31,14 @@ export function registerSettings() {
                 2: `${MODULE_ID}.settings.manualRollMode.choices.2`,
             },
             onChange: () => updateRealRollMode(),
+        },
+        "enableTotalBox": {
+            name: `${MODULE_ID}.settings.enableTotalBox.name`,
+            hint: `${MODULE_ID}.settings.enableTotalBox.hint`,
+            scope: "world",
+            config: true,
+            type: Boolean,
+            default: false,
         },
         "showMessage": {
             name: `${MODULE_ID}.settings.showMessage.name`,

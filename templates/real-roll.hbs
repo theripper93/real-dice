@@ -1,13 +1,17 @@
 <form action="submit">
 
-    <div class="real-roll-container">
+    <div class="real-roll-container {{#if multiRow}}real-roll-multi-row{{/if}}">
 
         {{#each dieTerms as |dieTerm|}}
-        <div class="form-group" style="grid-template-columns: repeat({{dieTerm.number}}, 1fr);">
+        <div class="form-group">
             {{#each dieTerm.inputs as |input|}}
             <input class="real-roll-input" style="background-image: url('../icons/svg/d{{dieTerm.faces}}-grey.svg');" type="number" min="0"
                 max="{{dieTerm.faces}}" placeholder="d{{dieTerm.faces}}" name="{{dieTerm.index}}.{{@index}}">
             {{/each}}
+        {{#if dieTerm.totalInput}}
+        <input data-tooltip="{{localize "real-dice.real-roll.totalBoxMessage"}}" class="real-roll-input total" style="background-image: url('../modules/real-dice/assets/rolling-dices.svg');" type="number" min="{{dieTerm.totalInput.min}}"
+                max="{{dieTerm.totalInput.max}}" placeholder="{{dieTerm.expression}}" name="{{dieTerm.index}}.total">
+        {{/if}}
         </div>
         {{/each}}
 

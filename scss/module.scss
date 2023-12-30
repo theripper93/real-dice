@@ -64,6 +64,12 @@
 
     .real-roll-container {
         padding: 0.5rem;
+
+        &.real-roll-multi-row{
+            .form-group{
+                justify-content: flex-start;
+            }
+        }
     }
 
     .real-roll-input {
@@ -80,6 +86,10 @@
         background-color: transparent;
         border: none;
         transition: all 0.2s ease-in-out;
+
+        &.total{
+            margin-left: auto;
+        }
 
         &:focus,
         &:hover,

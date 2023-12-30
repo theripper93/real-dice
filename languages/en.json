@@ -1,6 +1,10 @@
 {
     "real-dice": {
         "settings": {
+            "gmOnly": {
+                "name": "GM Only",
+                "hint": "If enabled, only the GM will be able to roll manually."
+            },
             "manualRollMode": {
                 "name": "Manual Roll Mode",
                 "hint": "If enabled, you will have to click the roll button to roll the dice. If disabled, the dice will roll automatically when you release them.",
@@ -9,6 +13,10 @@
                     "1": "Always",
                     "2": "Ask"
                 }
+            },
+            "enableTotalBox": {
+                "name": "Enable Total Box",
+                "hint": "If enabled, a box will be shown where you can enter the total of the roll. The module will then generate a roll that adds up to that total."
             },
             "showMessage": {
                 "name": "Show Message",
@@ -29,7 +37,8 @@
         },
         "real-roll": {
             "title": "Real Dice",
-            "realRollMessage": "has rolled manually."
+            "realRollMessage": "has rolled manually.",
+            "totalBoxMessage": "Enter the total of the roll instead of individual results."
         },
         "flags": {},
         "buttons": {

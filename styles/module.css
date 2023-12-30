@@ -52,6 +52,9 @@
 .real-roll .real-roll-container {
   padding: 0.5rem;
 }
+.real-roll .real-roll-container.real-roll-multi-row .form-group {
+  justify-content: flex-start;
+}
 .real-roll .real-roll-input {
   aspect-ratio: 1;
   height: 3rem;
@@ -66,6 +69,9 @@
   background-color: transparent;
   border: none;
   transition: all 0.2s ease-in-out;
+}
+.real-roll .real-roll-input.total {
+  margin-left: auto;
 }
 .real-roll .real-roll-input:focus, .real-roll .real-roll-input:hover, .real-roll .real-roll-input:active {
   border: none;
