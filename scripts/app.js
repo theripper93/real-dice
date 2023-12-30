@@ -14,6 +14,13 @@ export class RealRoll extends FormApplication {
         });
     }
 
+    static async prompt(terms) {
+        const dieTerms = terms.filter(term => term instanceof Die);
+        if (!dieTerms.length || getSetting("manualRollMode") == 0) return true;
+        const realRoll = new RealRoll(dieTerms);
+        return realRoll.prompt();
+    }
+
     async prompt() {
         if (getSetting("manualRollMode") === 2) {
             const manual = await this.askForManual();

@@ -1,5 +1,6 @@
 import {initConfig} from "./config.js";
 import { registerSettings } from "./settings.js";
+import { RealRoll } from "./app.js";
 
 export const MODULE_ID = "real-dice";
 
@@ -20,6 +21,7 @@ Hooks.on("init", () => {
 
 Hooks.on("setup", () => {
     initConfig();
+    CONFIG.Dice.RealRoll = RealRoll;
 });
 
 Hooks.on("ready", () => {

@@ -3,9 +3,7 @@ import { getSetting } from "./settings";
 
 export async function _evaluate(wrapped, ...args) {
 
-    const useManual = true;
-
-    if (!useManual) return wrapped(...args);
+    if (getSetting("manualRollMode") == 0) return wrapped(...args);
     
     // Unpack arguments
 
@@ -32,12 +30,7 @@ export async function _evaluate(wrapped, ...args) {
 
     // Step 3 - Manually evaluate Die terms
 
-    const dieTerms = this.terms.filter(term => term instanceof Die);
-
-    if (dieTerms.length > 0 && getSetting("manualRollMode") > 0) {
-        const realRoll = new RealRoll(dieTerms);
-        await realRoll.prompt();
-    }
+    await RealRoll.prompt(this.terms);
 
     // Step 4 - Evaluate remaining terms
     for (let term of this.terms) {
