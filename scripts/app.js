@@ -22,7 +22,8 @@ export class RealRoll extends FormApplication {
     }
 
     static async prompt(terms, roll) {
-        if(roll.realRollRollMode == CONST.DICE_ROLL_MODES.BLIND || roll.options?.rollMode == CONST.DICE_ROLL_MODES.BLIND ) return true;
+        const rollRollMode = roll.realRollRollMode ?? roll.options?.rollMode ?? game.settings.get("core", "rollMode");
+        if(rollRollMode == CONST.DICE_ROLL_MODES.BLIND ) return true;
         const dieTerms = terms.filter((term) => term instanceof Die);
         if (!dieTerms.length || getSetting("manualRollMode") == 0) return true;
         const realRoll = new RealRoll(dieTerms);
