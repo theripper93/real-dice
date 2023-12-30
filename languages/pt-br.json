@@ -47,6 +47,19 @@
             "gmOnly": {
                 "hint": "Se ativado, apenas o GM poderá rolar manualmente.",
                 "name": "Apenas GM"
+            },
+            "position": {
+                "choices": {
+                    "chat": "Janela de conversa",
+                    "default": "Centro"
+                },
+                "hint": "A posição da janela Dados reais.",
+                "name": "Posição"
+            }
+        },
+        "keybindings": {
+            "toggleRollMode": {
+                "name": "Alternar modo de rolagem manual"
             }
         }
     }

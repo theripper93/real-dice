@@ -47,6 +47,19 @@
             "gmOnly": {
                 "hint": "Si activé, seul le MJ pourra lancer manuellement.",
                 "name": "GM seulement"
+            },
+            "position": {
+                "choices": {
+                    "chat": "Boîte de discussion",
+                    "default": "Centre"
+                },
+                "hint": "La position de la fenêtre Real Dice.",
+                "name": "Position"
+            }
+        },
+        "keybindings": {
+            "toggleRollMode": {
+                "name": "Basculer le mode de rouleau manuel"
             }
         }
     }

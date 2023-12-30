@@ -47,6 +47,19 @@
             "gmOnly": {
                 "hint": "Se abilitato, solo il GM potrà lanciare manualmente.",
                 "name": "Solo GM"
+            },
+            "position": {
+                "choices": {
+                    "chat": "Casella di chat",
+                    "default": "Centro"
+                },
+                "hint": "La posizione della finestra dei dadi reali.",
+                "name": "Posizione"
+            }
+        },
+        "keybindings": {
+            "toggleRollMode": {
+                "name": "Attiva/disattiva la modalità di scorrimento manuale"
             }
         }
     }

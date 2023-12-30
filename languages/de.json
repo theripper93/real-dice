@@ -47,6 +47,19 @@
             "gmOnly": {
                 "hint": "Wenn diese Option aktiviert ist, kann nur der GM manuell würfeln.",
                 "name": "Nur GM"
+            },
+            "position": {
+                "choices": {
+                    "chat": "Chat Box",
+                    "default": "Center"
+                },
+                "hint": "Die Position des Real Dice-Fensters.",
+                "name": "Position"
+            }
+        },
+        "keybindings": {
+            "toggleRollMode": {
+                "name": "Schalten Sie den manuellen Rollmodus um"
             }
         }
     }

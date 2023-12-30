@@ -47,6 +47,19 @@
             "gmOnly": {
                 "hint": "有効にすると、GM のみが手動でロールできるようになります。",
                 "name": "GMのみ"
+            },
+            "position": {
+                "choices": {
+                    "chat": "チャットボックス",
+                    "default": "中心"
+                },
+                "hint": "リアルダイスウィンドウの位置。",
+                "name": "位置"
+            }
+        },
+        "keybindings": {
+            "toggleRollMode": {
+                "name": "手動ロールモードの切り替え"
             }
         }
     }

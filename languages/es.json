@@ -47,6 +47,19 @@
             "gmOnly": {
                 "hint": "Si está habilitado, solo el DJ podrá realizar tiradas manualmente.",
                 "name": "Sólo GM"
+            },
+            "position": {
+                "choices": {
+                    "chat": "Ventana de chat",
+                    "default": "Centro"
+                },
+                "hint": "La posición de la ventana de Real Dice.",
+                "name": "Posición"
+            }
+        },
+        "keybindings": {
+            "toggleRollMode": {
+                "name": "Alternar modo de giro manual"
             }
         }
     }
