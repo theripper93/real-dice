@@ -4,13 +4,15 @@ export class RealRoll extends FormApplication {
     constructor(dieTerms) {
         super();
         this.dieTerms = dieTerms;
-        this.dieTerms.forEach(term => {
-            term.inputs = Array.from({length: term.number}, () => term.faces)
-            if (term.number > 1 && getSetting("enableTotalBox")) {                
+        console.log("dieTerms", this.dieTerms);
+        this.dieTerms.forEach((term) => {
+            term.exploding = (term.modifiers ?? []).includes("x");
+            term.inputs = Array.from({ length: term.number }, () => term.faces);
+            if (term.number > 1 && getSetting("enableTotalBox")) {
                 term.totalInput = {
                     min: term.number,
                     max: term.number * term.faces,
-                }
+                };
             }
             term.index = this.dieTerms.indexOf(term);
         });
@@ -21,7 +23,7 @@ export class RealRoll extends FormApplication {
     }
 
     static async prompt(terms) {
-        const dieTerms = terms.filter(term => term instanceof Die);
+        const dieTerms = terms.filter((term) => term instanceof Die);
         if (!dieTerms.length || getSetting("manualRollMode") == 0) return true;
         const realRoll = new RealRoll(dieTerms);
         return realRoll.prompt();
@@ -54,7 +56,7 @@ export class RealRoll extends FormApplication {
             close: () => {
                 return false;
             },
-        })
+        });
         return res;
     }
 
@@ -85,6 +87,18 @@ export class RealRoll extends FormApplication {
     activateListeners(html) {
         super.activateListeners(html);
         html = html[0] ?? html;
+        const defaultPosition = getSetting("position");
+        if (defaultPosition == "chat") {
+            const chat = document.getElementById("chat-log");
+            //position at the bottom left of the chat log
+            const chatRect = chat.getBoundingClientRect();
+            const left = chatRect.left - Math.max(200, this.element[0].offsetWidth) - 10;
+            const top = chatRect.top + chatRect.height - this.element[0].offsetHeight / 2;
+            this.setPosition({
+                left,
+                top,
+            });
+        }
     }
 
     async _updateObject(event, formData) {
@@ -108,12 +122,10 @@ export class RealRoll extends FormApplication {
                 remaining -= roll;
             }
             delete value.total;
-            for(let i = 0; i < diceCount; i++) {
+            for (let i = 0; i < diceCount; i++) {
                 value[i] = rolls[i];
             }
-
         }
-
 
         let hasRolledManually = false;
         for (let it = 0; it < this.dieTerms.length; it++) {
@@ -123,25 +135,25 @@ export class RealRoll extends FormApplication {
             term.inputs = term.inputs.map((input, index) => {
                 return termData[`${index}`] ?? null;
             });
-            if(term.inputs.some(input => input !== null)) hasRolledManually = true;
-            const rollOverride = function ({minimize = false, maximize = false} = {}) {
-                    const roll = { result: undefined, active: true };
+            if (term.inputs.some((input) => input !== null)) hasRolledManually = true;
+            const rollOverride = function ({ minimize = false, maximize = false } = {}) {
+                const roll = { result: undefined, active: true };
                 if (minimize) roll.result = Math.min(1, this.faces);
                 else if (maximize) roll.result = this.faces;
                 else roll.result = this.inputs[this.results.length] ?? Math.ceil(CONFIG.Dice.randomUniform() * this.faces);
-                        this.results.push(roll);
-                        return roll;
-            } 
+                this.results.push(roll);
+                return roll;
+            };
             term.roll = rollOverride.bind(term);
         }
-        if(hasRolledManually) this.displayGmMessage();
+        if (hasRolledManually) this.displayGmMessage();
     }
 
     async displayGmMessage() {
-        if(game.user.isGM || !getSetting("showMessage")) return;
+        if (game.user.isGM || !getSetting("showMessage")) return;
         ChatMessage.create({
             content: `<div class="real-roll-message">${game.user.name} ${game.i18n.localize(`${MODULE_ID}.${RealRoll.APP_ID}.realRollMessage`)}</div>`,
-            speaker: {alias: "Real Dice"},
+            speaker: { alias: "Real Dice" },
             whisper: ChatMessage.getWhisperRecipients("GM"),
         });
     }

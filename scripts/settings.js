@@ -40,6 +40,18 @@ export function registerSettings() {
             type: Boolean,
             default: false,
         },
+        "position": {
+            name: `${MODULE_ID}.settings.position.name`,
+            hint: `${MODULE_ID}.settings.position.hint`,
+            scope: "world",
+            config: true,
+            type: String,
+            default: "default",
+            choices: {
+                "default": `${MODULE_ID}.settings.position.choices.default`,
+                "chat": `${MODULE_ID}.settings.position.choices.chat`,
+            },
+        },
         "showMessage": {
             name: `${MODULE_ID}.settings.showMessage.name`,
             hint: `${MODULE_ID}.settings.showMessage.hint`,
