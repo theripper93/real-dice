@@ -49,6 +49,11 @@
                     "2": "Manual Roll Mode: Ask<hr> You will be asked if you want to roll manually or automatically."
                 }
             }
+        },
+        "keybindings": {
+            "toggleRollMode": {
+                "name": "Toggle Manual Roll Mode"
+            }
         }
     }
 }

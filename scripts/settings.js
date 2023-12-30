@@ -22,7 +22,7 @@ export function registerSettings() {
             name: `${MODULE_ID}.settings.manualRollMode.name`,
             hint: `${MODULE_ID}.settings.manualRollMode.hint`,
             scope: "client",
-            config: true,
+            config: false,
             type: Number,
             default: 0,
             choices: {

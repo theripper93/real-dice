@@ -28,4 +28,7 @@ Hooks.on("ready", () => {
     if (game.user.isGM) {
         document.head.removeChild(messageStyle);
     }
+    if (!game.user.isGM && getSetting("gmOnly")) {
+        libWrapper.unregister_all(MODULE_ID);
+    }
 });

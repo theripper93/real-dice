@@ -12,6 +12,8 @@ const REAL_ROLL_MODE_ICONS = {
 
 export function initConfig() {
 
+    registerKeyBindings();
+
     libWrapper.register(MODULE_ID, 'Roll.prototype._evaluate', _evaluate, "MIXED");
 
     rollModeToggleEl.setAttribute("role", "button");
@@ -40,6 +42,28 @@ export function initConfig() {
         html[0].querySelector(".control-buttons").prepend(rollModeToggleEl);
     });
 
+    Hooks.on("renderModuleManagement", (app, html, data) => {
+        if (getSetting("gmOnly") && !game.user.isGM) {
+            html[0].querySelectorAll(`[data-module-id="real-dice"]`).forEach(el => {
+                el.style.display = "none";
+            });
+        }
+    });
+
+}
+
+function registerKeyBindings() {
+    game.keybindings.register(MODULE_ID, "toggleRollMode", {
+        name: `${MODULE_ID}.keybindings.toggleRollMode.name`,
+        editable: [{ key: "KeyR", modifiers: [KeyboardManager.MODIFIER_KEYS.SHIFT] }],
+        restricted: false,
+        onDown: () => {},
+        onUp: () => {
+            const currentRollMode = getSetting("manualRollMode");
+            const realRollMode = (currentRollMode + 1) % 3;
+            setSetting("manualRollMode", realRollMode);
+        },
+    });
 }
 
 export function updateRealRollMode() {
