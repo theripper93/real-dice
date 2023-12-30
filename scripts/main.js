@@ -1,5 +1,5 @@
 import {initConfig} from "./config.js";
-import { registerSettings } from "./settings.js";
+import { registerSettings, getSetting } from "./settings.js";
 import { RealRoll } from "./app.js";
 
 export const MODULE_ID = "real-dice";
@@ -30,5 +30,6 @@ Hooks.on("ready", () => {
     }
     if (!game.user.isGM && getSetting("gmOnly")) {
         libWrapper.unregister_all(MODULE_ID);
+        game.keybindings.actions.get(`${MODULE_ID}.toggleRollMode`).restricted = true
     }
 });

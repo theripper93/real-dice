@@ -3,7 +3,7 @@
         "settings": {
             "gmOnly": {
                 "name": "GM Only",
-                "hint": "If enabled, only the GM will be able to roll manually."
+                "hint": "If enabled, only the GM will be able to roll manually. When this setting is enabled, the module will be undetectable by players."
             },
             "manualRollMode": {
                 "name": "Manual Roll Mode",
