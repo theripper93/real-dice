@@ -4,7 +4,6 @@ export class RealRoll extends FormApplication {
     constructor(dieTerms) {
         super();
         this.dieTerms = dieTerms;
-        console.log("dieTerms", this.dieTerms);
         this.dieTerms.forEach((term) => {
             term.exploding = (term.modifiers ?? []).includes("x");
             term.inputs = Array.from({ length: term.number }, () => term.faces);
@@ -30,6 +29,11 @@ export class RealRoll extends FormApplication {
     }
 
     async prompt() {
+        const rollMode = game.settings.get("core", "rollMode");
+        if (rollMode == CONST.DICE_ROLL_MODES.BLIND) {
+            this._resolve(true);
+            return this.promise;
+        }
         if (getSetting("manualRollMode") === 2) {
             const manual = await this.askForManual();
             if (!manual) {

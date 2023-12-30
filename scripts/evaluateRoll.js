@@ -3,8 +3,9 @@ import { getSetting } from "./settings";
 
 export async function _evaluate(wrapped, ...args) {
 
-    if (getSetting("manualRollMode") == 0) return wrapped(...args);
     
+    if (getSetting("manualRollMode") == 0) return wrapped(...args);
+
     // Unpack arguments
 
     const { minimize, maximize } = args[0] || {};
