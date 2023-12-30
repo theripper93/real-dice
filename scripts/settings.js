@@ -5,6 +5,7 @@ export function registerSettings() {
 
     Hooks.on("renderSettingsConfig", (app, html, data) => {
         colorPicker("messageColor", html);
+        colorPicker("themeColor", html);
     });
 
 
@@ -38,6 +39,23 @@ export function registerSettings() {
             config: true,
             type: String,
             default: "#ff007a",
+            onChange: () => updateColorVar(),
+        },
+        "useTheme": {
+            name: `${MODULE_ID}.settings.useTheme.name`,
+            hint: `${MODULE_ID}.settings.useTheme.hint`,
+            scope: "world",
+            config: true,
+            type: Boolean,
+            default: true,
+        },
+        "themeColor": {
+            name: `${MODULE_ID}.settings.themeColor.name`,
+            hint: `${MODULE_ID}.settings.themeColor.hint`,
+            scope: "world",
+            config: true,
+            type: String,
+            default: "#ffa200",
             onChange: () => updateColorVar(),
         },
     };
@@ -80,4 +98,6 @@ function colorPicker(settingId, html) {
 function updateColorVar() {
     const color = game.settings.get(MODULE_ID, "messageColor");
     document.documentElement.style.setProperty("--real-roll-message-color", color);
+    const themeColor = game.settings.get(MODULE_ID, "themeColor");
+    document.documentElement.style.setProperty("--real-roll-theme-accent", themeColor);
 }

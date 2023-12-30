@@ -56,6 +56,10 @@ export class RealRoll extends FormApplication {
         return "real-roll";
     }
 
+    get id() {
+        return RealRoll.APP_ID + randomID();
+    }
+
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
             id: this.APP_ID,
@@ -64,6 +68,7 @@ export class RealRoll extends FormApplication {
             resizable: false,
             minimizable: true,
             title: game.i18n.localize(`${MODULE_ID}.${this.APP_ID}.title`),
+            classes: getSetting("useTheme") ? ["themed-mode", this.APP_ID] : [this.APP_ID],
         });
     }
 

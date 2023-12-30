@@ -30,6 +30,14 @@
             "showMessage": {
                 "hint": "Si activé, un message sera affiché dans le chat au MJ lorsqu'un joueur lance manuellement.",
                 "name": "Voir le message"
+            },
+            "themeColor": {
+                "hint": "La couleur d’accent du thème.",
+                "name": "Couleur du thème"
+            },
+            "useTheme": {
+                "hint": "Si elle est activée, la fenêtre Real Dice utilisera un thème personnalisé",
+                "name": "Utiliser le thème"
             }
         }
     }

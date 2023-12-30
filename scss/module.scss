@@ -1,6 +1,59 @@
 @import 'globals';
 
-#real-roll {
+.real-roll {
+
+    &.themed-mode {
+        background: none;
+
+        .window-header {
+            display: none;
+        }
+
+        .window-content {
+            background: rgba(0, 0, 0, 0.566);
+            backdrop-filter: blur(5px);
+            border-radius: 5px;
+            background-image: none;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        button {
+            border: 1px solid #ffffff24;
+            border-radius: 0;
+            color: var(--real-roll-theme-accent);
+            background-color: rgb(111 111 111 / 10%);
+            border-left: none;
+            border-bottom: none;
+            border-right: none;
+            transform: scale(1.1);
+            text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+            transition: all 0.2s ease-in-out;
+
+            &:hover,
+            &:focus,
+            &:active {
+                box-shadow: none;
+                background-color: var(--real-roll-theme-accent);
+            }
+        }
+
+        .real-roll-input {
+
+            color: var(--real-roll-theme-accent);
+            text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+
+            &::placeholder{
+                text-shadow: none;
+            }
+
+            &:focus,
+            &:hover,
+            &:active {
+                filter: drop-shadow(0px 0px 5px var(--real-roll-theme-accent));
+            }
+        }
+    }
 
     .form-group {
         gap: 0.3rem;
@@ -9,7 +62,7 @@
         padding: 0.3rem 0;
     }
 
-    .real-roll-container{
+    .real-roll-container {
         padding: 0.5rem;
     }
 
@@ -28,7 +81,9 @@
         border: none;
         transition: all 0.2s ease-in-out;
 
-        &:focus, &:hover, &:active {
+        &:focus,
+        &:hover,
+        &:active {
             border: none;
             box-shadow: none;
             filter: drop-shadow(0px 0px 5px var(--color-shadow-primary));
@@ -36,16 +91,18 @@
     }
 }
 
-#chat-controls .control-buttons{
+#chat-controls .control-buttons {
     display: flex;
-    a{
+
+    a {
         width: 25px;
     }
 }
 
-.chat-message:has(.real-roll-message){
-    .message-header{
+.chat-message:has(.real-roll-message) {
+    .message-header {
         display: none;
     }
+
     background-color: var(--real-roll-message-color);
 }

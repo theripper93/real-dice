@@ -30,6 +30,14 @@
             "showMessage": {
                 "hint": "Se abilitato, verrà mostrato un messaggio nella chat al GM quando un giocatore lancia manualmente.",
                 "name": "Mostra messaggio"
+            },
+            "themeColor": {
+                "hint": "Il colore principale del tema.",
+                "name": "Colore del tema"
+            },
+            "useTheme": {
+                "hint": "Se abilitato, la finestra Real Dice utilizzerà un tema personalizzato",
+                "name": "Usa tema"
             }
         }
     }

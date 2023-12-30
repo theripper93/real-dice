@@ -1,17 +1,58 @@
 ::root {
   --real-roll-message-color: red;
+  --real-roll-theme-accent: #ffa200;
 }
 
-#real-roll .form-group {
+.real-roll.themed-mode {
+  background: none;
+}
+.real-roll.themed-mode .window-header {
+  display: none;
+}
+.real-roll.themed-mode .window-content {
+  background: rgba(0, 0, 0, 0.566);
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  background-image: none;
+  padding: 0;
+  overflow: hidden;
+}
+.real-roll.themed-mode button {
+  border: 1px solid rgba(255, 255, 255, 0.1411764706);
+  border-radius: 0;
+  color: var(--real-roll-theme-accent);
+  background-color: rgba(111, 111, 111, 0.1);
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  transform: scale(1.1);
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  transition: all 0.2s ease-in-out;
+}
+.real-roll.themed-mode button:hover, .real-roll.themed-mode button:focus, .real-roll.themed-mode button:active {
+  box-shadow: none;
+  background-color: var(--real-roll-theme-accent);
+}
+.real-roll.themed-mode .real-roll-input {
+  color: var(--real-roll-theme-accent);
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+}
+.real-roll.themed-mode .real-roll-input::placeholder {
+  text-shadow: none;
+}
+.real-roll.themed-mode .real-roll-input:focus, .real-roll.themed-mode .real-roll-input:hover, .real-roll.themed-mode .real-roll-input:active {
+  filter: drop-shadow(0px 0px 5px var(--real-roll-theme-accent));
+}
+.real-roll .form-group {
   gap: 0.3rem;
   justify-content: space-around;
   align-content: center;
   padding: 0.3rem 0;
 }
-#real-roll .real-roll-container {
+.real-roll .real-roll-container {
   padding: 0.5rem;
 }
-#real-roll .real-roll-input {
+.real-roll .real-roll-input {
   aspect-ratio: 1;
   height: 3rem;
   width: 3rem;
@@ -26,7 +67,7 @@
   border: none;
   transition: all 0.2s ease-in-out;
 }
-#real-roll .real-roll-input:focus, #real-roll .real-roll-input:hover, #real-roll .real-roll-input:active {
+.real-roll .real-roll-input:focus, .real-roll .real-roll-input:hover, .real-roll .real-roll-input:active {
   border: none;
   box-shadow: none;
   filter: drop-shadow(0px 0px 5px var(--color-shadow-primary));

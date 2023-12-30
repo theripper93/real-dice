@@ -30,6 +30,14 @@
             "showMessage": {
                 "hint": "Se habilitado, uma mensagem será mostrada no chat para o GM quando um jogador rolar manualmente.",
                 "name": "Mostrar mensagem"
+            },
+            "themeColor": {
+                "hint": "A cor de destaque do tema.",
+                "name": "Cor do tema"
+            },
+            "useTheme": {
+                "hint": "Se ativado, a janela Real Dice usará um tema personalizado",
+                "name": "Usar tema"
             }
         }
     }

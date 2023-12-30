@@ -30,6 +30,14 @@
             "showMessage": {
                 "hint": "Wenn diese Option aktiviert ist, wird dem GM im Chat eine Nachricht angezeigt, wenn ein Spieler manuell würfelt.",
                 "name": "Zeige Nachricht"
+            },
+            "themeColor": {
+                "hint": "Die Akzentfarbe des Themas.",
+                "name": "Themenfarbe"
+            },
+            "useTheme": {
+                "hint": "Wenn diese Option aktiviert ist, verwendet das Real Dice-Fenster ein benutzerdefiniertes Design",
+                "name": "Verwenden Sie ein Thema"
             }
         }
     }

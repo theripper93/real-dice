@@ -17,6 +17,14 @@
             "messageColor": {
                 "name": "Message Color",
                 "hint": "The color of the message shown in the chat to the GM when a player rolls manually."
+            },
+            "useTheme": {
+                "name": "Use Theme",
+                "hint": "If enabled, the Real Dice window will use a custom theme"
+            },
+            "themeColor": {
+                "name": "Theme Color",
+                "hint": "The accent color of the theme."
             }
         },
         "real-roll": {

@@ -30,6 +30,14 @@
             "showMessage": {
                 "hint": "Si está habilitado, se mostrará un mensaje en el chat al DJ cuando un jugador tire manualmente.",
                 "name": "Mostrar mensaje"
+            },
+            "themeColor": {
+                "hint": "El color de acento del tema.",
+                "name": "Color del tema"
+            },
+            "useTheme": {
+                "hint": "Si está habilitado, la ventana de Real Dice usará un tema personalizado",
+                "name": "Usar tema"
             }
         }
     }
