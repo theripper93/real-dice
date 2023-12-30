@@ -31,7 +31,7 @@ export async function _evaluate(wrapped, ...args) {
 
     // Step 3 - Manually evaluate Die terms
 
-    await RealRoll.prompt(this.terms);
+    await RealRoll.prompt(this.terms, this);
 
     // Step 4 - Evaluate remaining terms
     for (let term of this.terms) {
@@ -41,4 +41,10 @@ export async function _evaluate(wrapped, ...args) {
     // Step 5 - Evaluate the final expression
     this._total = this._evaluateTotal();
     return this;
+}
+
+export async function toMessage(wrapped, ...args) {
+    const rollMode = args[1]?.rollMode
+    this.realRollRollMode = rollMode;
+    return wrapped(...args);
 }

@@ -1,5 +1,5 @@
 import {MODULE_ID} from "./main.js";
-import {_evaluate} from "./evaluateRoll.js";
+import {_evaluate, toMessage} from "./evaluateRoll.js";
 import { getSetting, setSetting } from "./settings.js";
 
 const rollModeToggleEl = document.createElement("a");
@@ -15,6 +15,8 @@ export function initConfig() {
     registerKeyBindings();
 
     libWrapper.register(MODULE_ID, 'Roll.prototype._evaluate', _evaluate, "MIXED");
+
+    libWrapper.register(MODULE_ID, 'Roll.prototype.toMessage', toMessage)
 
     rollModeToggleEl.setAttribute("role", "button");
     rollModeToggleEl.setAttribute("tooltip-direction", "UP");
