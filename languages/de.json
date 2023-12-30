@@ -11,7 +11,8 @@
         },
         "real-roll": {
             "realRollMessage": "wurde manuell gewürfelt.",
-            "title": "Echte Würfel"
+            "title": "Echte Würfel",
+            "totalBoxMessage": "Geben Sie die Gesamtsumme des Wurfs anstelle einzelner Ergebnisse ein."
         },
         "settings": {
             "manualRollMode": {
@@ -38,6 +39,14 @@
             "useTheme": {
                 "hint": "Wenn diese Option aktiviert ist, verwendet das Real Dice-Fenster ein benutzerdefiniertes Design",
                 "name": "Verwenden Sie ein Thema"
+            },
+            "enableTotalBox": {
+                "hint": "Wenn aktiviert, wird ein Feld angezeigt, in das Sie die Gesamtsumme des Wurfs eingeben können. \nDas Modul generiert dann einen Wurf, der diese Summe ergibt.",
+                "name": "Gesamtbox ​​aktivieren"
+            },
+            "gmOnly": {
+                "hint": "Wenn diese Option aktiviert ist, kann nur der GM manuell würfeln.",
+                "name": "Nur GM"
             }
         }
     }

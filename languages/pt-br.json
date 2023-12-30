@@ -11,7 +11,8 @@
         },
         "real-roll": {
             "realRollMessage": "rolou manualmente.",
-            "title": "Dados reais"
+            "title": "Dados reais",
+            "totalBoxMessage": "Insira o total do lançamento em vez dos resultados individuais."
         },
         "settings": {
             "manualRollMode": {
@@ -38,6 +39,14 @@
             "useTheme": {
                 "hint": "Se ativado, a janela Real Dice usará um tema personalizado",
                 "name": "Usar tema"
+            },
+            "enableTotalBox": {
+                "hint": "Se ativado, será mostrada uma caixa onde você pode inserir o total do lançamento. \nO módulo irá então gerar um lançamento que soma esse total.",
+                "name": "Ativar caixa total"
+            },
+            "gmOnly": {
+                "hint": "Se ativado, apenas o GM poderá rolar manualmente.",
+                "name": "Apenas GM"
             }
         }
     }

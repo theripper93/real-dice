@@ -11,7 +11,8 @@
         },
         "real-roll": {
             "realRollMessage": "a roulé manuellement.",
-            "title": "De vrais dés"
+            "title": "De vrais dés",
+            "totalBoxMessage": "Entrez le total du lancer au lieu des résultats individuels."
         },
         "settings": {
             "manualRollMode": {
@@ -38,6 +39,14 @@
             "useTheme": {
                 "hint": "Si elle est activée, la fenêtre Real Dice utilisera un thème personnalisé",
                 "name": "Utiliser le thème"
+            },
+            "enableTotalBox": {
+                "hint": "Si cette option est activée, une boîte s'affichera dans laquelle vous pourrez saisir le total du lancer. \nLe module générera alors un jet qui s'ajoute à ce total.",
+                "name": "Activer la boîte totale"
+            },
+            "gmOnly": {
+                "hint": "Si activé, seul le MJ pourra lancer manuellement.",
+                "name": "GM seulement"
             }
         }
     }

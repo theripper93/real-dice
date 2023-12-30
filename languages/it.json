@@ -11,7 +11,8 @@
         },
         "real-roll": {
             "realRollMessage": "è rotolato manualmente.",
-            "title": "Dadi veri"
+            "title": "Dadi veri",
+            "totalBoxMessage": "Inserisci il totale del tiro invece dei singoli risultati."
         },
         "settings": {
             "manualRollMode": {
@@ -38,6 +39,14 @@
             "useTheme": {
                 "hint": "Se abilitato, la finestra Real Dice utilizzerà un tema personalizzato",
                 "name": "Usa tema"
+            },
+            "enableTotalBox": {
+                "hint": "Se abilitato verrà mostrata una casella dove inserire il totale del tiro. \nIl modulo genererà quindi un tiro che si aggiungerà a quel totale.",
+                "name": "Abilita casella totale"
+            },
+            "gmOnly": {
+                "hint": "Se abilitato, solo il GM potrà lanciare manualmente.",
+                "name": "Solo GM"
             }
         }
     }

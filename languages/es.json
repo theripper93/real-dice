@@ -11,7 +11,8 @@
         },
         "real-roll": {
             "realRollMessage": "ha rodado manualmente.",
-            "title": "Dados reales"
+            "title": "Dados reales",
+            "totalBoxMessage": "Ingrese el total de la tirada en lugar de los resultados individuales."
         },
         "settings": {
             "manualRollMode": {
@@ -38,6 +39,14 @@
             "useTheme": {
                 "hint": "Si está habilitado, la ventana de Real Dice usará un tema personalizado",
                 "name": "Usar tema"
+            },
+            "enableTotalBox": {
+                "hint": "Si está habilitado, se mostrará un cuadro donde podrá ingresar el total del rollo. \nLuego, el módulo generará una tirada que suma ese total.",
+                "name": "Habilitar cuadro total"
+            },
+            "gmOnly": {
+                "hint": "Si está habilitado, solo el DJ podrá realizar tiradas manualmente.",
+                "name": "Sólo GM"
             }
         }
     }
