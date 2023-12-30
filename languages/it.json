@@ -1,1 +1,36 @@
-
+{
+    "real-dice": {
+        "buttons": {
+            "realRollToggle": {
+                "tooltips": {
+                    "0": "Modalità lancio manuale: disabilitata<hr> Tutti i tiri saranno automatici.",
+                    "1": "Modalità lancio manuale: abilitata<hr> Tutti i tiri saranno manuali.",
+                    "2": "Modalità rotolo manuale: Chiedi<hr> Ti verrà chiesto se desideri rotolare manualmente o automaticamente."
+                }
+            }
+        },
+        "real-roll": {
+            "realRollMessage": "è rotolato manualmente.",
+            "title": "Dadi veri"
+        },
+        "settings": {
+            "manualRollMode": {
+                "choices": {
+                    "0": "Mai",
+                    "1": "Sempre",
+                    "2": "Chiedere"
+                },
+                "hint": "Se abilitato, dovrai fare clic sul pulsante di lancio per lanciare i dadi. \nSe disabilitato, i dadi rotoleranno automaticamente quando li rilasci.",
+                "name": "Modalità di scorrimento manuale"
+            },
+            "messageColor": {
+                "hint": "Il colore del messaggio mostrato nella chat al GM quando un giocatore tira manualmente.",
+                "name": "Colore del messaggio"
+            },
+            "showMessage": {
+                "hint": "Se abilitato, verrà mostrato un messaggio nella chat al GM quando un giocatore lancia manualmente.",
+                "name": "Mostra messaggio"
+            }
+        }
+    }
+}

@@ -1,7 +1,37 @@
 {
-    "module-id": {
-        "settings": {},
-        "app": {},
-        "flags": {}
+    "real-dice": {
+        "settings": {
+            "manualRollMode": {
+                "name": "Manual Roll Mode",
+                "hint": "If enabled, you will have to click the roll button to roll the dice. If disabled, the dice will roll automatically when you release them.",
+                "choices": {
+                    "0": "Never",
+                    "1": "Always",
+                    "2": "Ask"
+                }
+            },
+            "showMessage": {
+                "name": "Show Message",
+                "hint": "If enabled, a message will be shown in the chat to the GM when a player rolls manually."
+            },
+            "messageColor": {
+                "name": "Message Color",
+                "hint": "The color of the message shown in the chat to the GM when a player rolls manually."
+            }
+        },
+        "real-roll": {
+            "title": "Real Dice",
+            "realRollMessage": "has rolled manually."
+        },
+        "flags": {},
+        "buttons": {
+            "realRollToggle": {
+                "tooltips": {
+                    "0": "Manual Roll Mode: Disabled<hr> All rolls will be automatic.",
+                    "1": "Manual Roll Mode: Enabled<hr> All rolls will be manual.",
+                    "2": "Manual Roll Mode: Ask<hr> You will be asked if you want to roll manually or automatically."
+                }
+            }
+        }
     }
 }

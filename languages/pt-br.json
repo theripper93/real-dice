@@ -1,0 +1,36 @@
+{
+    "real-dice": {
+        "buttons": {
+            "realRollToggle": {
+                "tooltips": {
+                    "0": "Modo de rolagem manual: Desativado<hr> Todas as rolagens serão automáticas.",
+                    "1": "Modo de rolagem manual: Habilitado<hr> Todas as rolagens serão manuais.",
+                    "2": "Modo de rolagem manual: Pergunte<hr> Você será perguntado se deseja rolar manualmente ou automaticamente."
+                }
+            }
+        },
+        "real-roll": {
+            "realRollMessage": "rolou manualmente.",
+            "title": "Dados reais"
+        },
+        "settings": {
+            "manualRollMode": {
+                "choices": {
+                    "0": "Nunca",
+                    "1": "Sempre",
+                    "2": "Perguntar"
+                },
+                "hint": "Se ativado, você terá que clicar no botão rolar para lançar os dados. \nSe desativado, os dados rolarão automaticamente quando você os lançar.",
+                "name": "Modo de rolagem manual"
+            },
+            "messageColor": {
+                "hint": "A cor da mensagem mostrada no chat para o GM quando um jogador rola manualmente.",
+                "name": "Cor da mensagem"
+            },
+            "showMessage": {
+                "hint": "Se habilitado, uma mensagem será mostrada no chat para o GM quando um jogador rolar manualmente.",
+                "name": "Mostrar mensagem"
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<form action="submit">
+
+    <div class="real-roll-container">
+
+        {{#each dieTerms as |dieTerm|}}
+        <div class="form-group" style="grid-template-columns: repeat({{dieTerm.number}}, 1fr);">
+            {{#each dieTerm.inputs as |input|}}
+            <input class="real-roll-input" style="background-image: url('../icons/svg/d{{dieTerm.faces}}-grey.svg');" type="number" min="0"
+                max="{{dieTerm.faces}}" placeholder="d{{dieTerm.faces}}" name="{{dieTerm.index}}.{{@index}}">
+            {{/each}}
+        </div>
+        {{/each}}
+
+    </div>
+
+    <footer>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i></button>
+    </footer>
+</form>

@@ -1,0 +1,36 @@
+{
+    "real-dice": {
+        "buttons": {
+            "realRollToggle": {
+                "tooltips": {
+                    "0": "Manueller Rollmodus: Deaktiviert<hr> Alle Rollvorgänge erfolgen automatisch.",
+                    "1": "Manueller Rollmodus: Aktiviert<hr> Alle Rollvorgänge erfolgen manuell.",
+                    "2": "Manueller Rollmodus: Fragen<hr> Sie werden gefragt, ob Sie manuell oder automatisch rollen möchten."
+                }
+            }
+        },
+        "real-roll": {
+            "realRollMessage": "wurde manuell gewürfelt.",
+            "title": "Echte Würfel"
+        },
+        "settings": {
+            "manualRollMode": {
+                "choices": {
+                    "0": "Niemals",
+                    "1": "Stets",
+                    "2": "Fragen"
+                },
+                "hint": "Wenn diese Option aktiviert ist, müssen Sie auf die Schaltfläche „Würfeln“ klicken, um zu würfeln. \nWenn deaktiviert, würfeln die Würfel automatisch, wenn Sie sie loslassen.",
+                "name": "Manueller Rollmodus"
+            },
+            "messageColor": {
+                "hint": "Die Farbe der Nachricht, die im Chat an den GM angezeigt wird, wenn ein Spieler manuell würfelt.",
+                "name": "Nachrichtenfarbe"
+            },
+            "showMessage": {
+                "hint": "Wenn diese Option aktiviert ist, wird dem GM im Chat eine Nachricht angezeigt, wenn ein Spieler manuell würfelt.",
+                "name": "Zeige Nachricht"
+            }
+        }
+    }
+}

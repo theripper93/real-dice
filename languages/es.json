@@ -1,0 +1,36 @@
+{
+    "real-dice": {
+        "buttons": {
+            "realRollToggle": {
+                "tooltips": {
+                    "0": "Modo de rollo manual: Desactivado<hr> Todos los rollos serán automáticos.",
+                    "1": "Modo de rollo manual: habilitado<hr> Todos los rollos serán manuales.",
+                    "2": "Modo de rollo manual: Preguntar<hr> Se le preguntará si desea rodar manual o automáticamente."
+                }
+            }
+        },
+        "real-roll": {
+            "realRollMessage": "ha rodado manualmente.",
+            "title": "Dados reales"
+        },
+        "settings": {
+            "manualRollMode": {
+                "choices": {
+                    "0": "Nunca",
+                    "1": "Siempre",
+                    "2": "Preguntar"
+                },
+                "hint": "Si está habilitado, tendrás que hacer clic en el botón de tirar para tirar los dados. \nSi está desactivado, los dados se lanzarán automáticamente cuando los sueltes.",
+                "name": "Modo de rollo manual"
+            },
+            "messageColor": {
+                "hint": "El color del mensaje que se muestra en el chat al DJ cuando un jugador tira manualmente.",
+                "name": "Color del mensaje"
+            },
+            "showMessage": {
+                "hint": "Si está habilitado, se mostrará un mensaje en el chat al DJ cuando un jugador tire manualmente.",
+                "name": "Mostrar mensaje"
+            }
+        }
+    }
+}

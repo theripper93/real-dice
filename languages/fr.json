@@ -1,0 +1,36 @@
+{
+    "real-dice": {
+        "buttons": {
+            "realRollToggle": {
+                "tooltips": {
+                    "0": "Mode de rouleau manuel : Désactivé<hr> Tous les rouleaux seront automatiques.",
+                    "1": "Mode de rouleau manuel : activé<hr> Tous les rouleaux seront manuels.",
+                    "2": "Mode de roulement manuel : Demander<hr> Il vous sera demandé si vous souhaitez rouler manuellement ou automatiquement."
+                }
+            }
+        },
+        "real-roll": {
+            "realRollMessage": "a roulé manuellement.",
+            "title": "De vrais dés"
+        },
+        "settings": {
+            "manualRollMode": {
+                "choices": {
+                    "0": "Jamais",
+                    "1": "Toujours",
+                    "2": "Demander"
+                },
+                "hint": "Si cette option est activée, vous devrez cliquer sur le bouton Lancer pour lancer les dés. \nS'ils sont désactivés, les dés lanceront automatiquement lorsque vous les relâcherez.",
+                "name": "Mode rouleau manuel"
+            },
+            "messageColor": {
+                "hint": "La couleur du message affiché dans le chat au MJ lorsqu'un joueur lance manuellement.",
+                "name": "Couleur des messages"
+            },
+            "showMessage": {
+                "hint": "Si activé, un message sera affiché dans le chat au MJ lorsqu'un joueur lance manuellement.",
+                "name": "Voir le message"
+            }
+        }
+    }
+}
