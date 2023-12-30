@@ -1,5 +1,5 @@
 {
-    "title": "Real Dice",
+    "title": "Real Dice - Manual Rolling",
     "description": "This module allows you to roll manually roll dice. Works with any system and should be compatible with automation modules.",
     "id": "real-dice",
     "version": "1.0",
