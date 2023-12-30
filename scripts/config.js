@@ -27,7 +27,14 @@ export function initConfig() {
     });
 
     Hooks.on("renderSidebarTab", (app, html, data) => {
-        if(app.tabName !== "chat") return;
+        if (app.tabName !== "chat") return;
+        const controls = html[0].querySelector(".control-buttons");
+        if (!controls) {
+            const div = document.createElement("div");
+            div.classList.add("control-buttons");
+            div.style.maxWidth = "25px";
+            html[0].querySelector(".roll-type-select").after(div);
+        }
         html[0].querySelector(".control-buttons").prepend(rollModeToggleEl);
     });
 

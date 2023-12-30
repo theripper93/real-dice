@@ -97,7 +97,7 @@ export class RealRoll extends FormApplication {
         if(game.user.isGM || !getSetting("showMessage")) return;
         ChatMessage.create({
             content: `<div class="real-roll-message">${game.user.name} ${game.i18n.localize(`${MODULE_ID}.${RealRoll.APP_ID}.realRollMessage`)}</div>`,
-            speaker: ChatMessage.getSpeaker({alias: "Real Roll"}),
+            speaker: {alias: "Real Dice"},
             whisper: ChatMessage.getWhisperRecipients("GM"),
         });
     }

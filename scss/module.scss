@@ -44,5 +44,8 @@
 }
 
 .chat-message:has(.real-roll-message){
+    .message-header{
+        display: none;
+    }
     background-color: var(--real-roll-message-color);
 }
