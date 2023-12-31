@@ -23,11 +23,26 @@ export class RealRoll extends FormApplication {
 
     static async prompt(terms, roll) {
         const rollRollMode = roll.realRollRollMode ?? roll.options?.rollMode ?? game.settings.get("core", "rollMode");
-        if(rollRollMode == CONST.DICE_ROLL_MODES.BLIND ) return true;
-        const dieTerms = terms.filter((term) => term instanceof Die);
+        if (rollRollMode == CONST.DICE_ROLL_MODES.BLIND) return true;
+        const dieTerms = this.getTermsRecursive(terms);
         if (!dieTerms.length || getSetting("manualRollMode") == 0) return true;
         const realRoll = new RealRoll(dieTerms);
         return realRoll.prompt();
+    }
+
+    static getTermsRecursive(terms) {
+        const dieTerms = [];
+        //traverse object and arrays and find all die terms
+        const traverse = (obj) => {
+            if(!obj) return;
+            const constructorName = obj.constructor.name;
+            if(constructorName === "PoolTerm" || constructorName === "InstancePool") return;
+            if (obj instanceof Die) dieTerms.push(obj);
+            else if (obj instanceof Array) obj.forEach(traverse);
+            else if (obj instanceof Object) Object.values(obj).forEach(traverse);
+        };
+        traverse(terms);
+        return Array.from(new Set(dieTerms));
     }
 
     async prompt() {
@@ -100,6 +115,9 @@ export class RealRoll extends FormApplication {
                 top,
             });
         }
+        //focus the first input
+        const firstInput = html.querySelector("input");
+        firstInput.focus();
     }
 
     async _updateObject(event, formData) {
