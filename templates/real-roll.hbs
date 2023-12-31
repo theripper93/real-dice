@@ -5,7 +5,7 @@
         {{#each dieTerms as |dieTerm|}}
         <div class="form-group">
             {{#each dieTerm.inputs as |input|}}
-            <input class="real-roll-input" style="background-image: url('../icons/svg/d{{dieTerm.faces}}-grey.svg');" type="number" min="0"
+            <input class="real-roll-input" style="background-image: url('{{dieTerm._image}}');" type="number" min="0"
                 {{#unless dieTerm.exploding}}max="{{dieTerm.faces}}"{{/unless}} placeholder="d{{dieTerm.faces}}" name="{{dieTerm.index}}.{{@index}}">
             {{/each}}
         {{#if dieTerm.totalInput}}

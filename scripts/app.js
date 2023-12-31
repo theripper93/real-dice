@@ -1,12 +1,26 @@
 import { MODULE_ID } from "./main";
-import { getSetting } from "./settings";
+import {getSetting} from "./settings";
+
+const DIE_IMAGES = {
+    2: "../modules/real-dice/assets/two-coins.svg",
+    4: "../icons/svg/d4-grey.svg",
+    6: "../icons/svg/d6-grey.svg",
+    8: "../icons/svg/d8-grey.svg",
+    10: "../icons/svg/d10-grey.svg",
+    12: "../icons/svg/d12-grey.svg",
+    20: "../icons/svg/d20-grey.svg",
+    default: "../icons/svg/d6-grey.svg",
+};
+
 export class RealRoll extends FormApplication {
     constructor(dieTerms) {
         super();
         this.dieTerms = dieTerms;
         this.dieTerms.forEach((term) => {
             term.exploding = (term.modifiers ?? []).includes("x");
-            term.inputs = Array.from({ length: term.number }, () => term.faces);
+            term.inputs = Array.from({length: term.number}, () => term.faces);
+            term._processing = true;
+            term._image = DIE_IMAGES[term.faces] ?? DIE_IMAGES.default;
             if (term.number > 1 && getSetting("enableTotalBox")) {
                 term.totalInput = {
                     min: term.number,
@@ -22,7 +36,7 @@ export class RealRoll extends FormApplication {
     }
 
     static async prompt(terms, roll) {
-        const rollRollMode = roll.realRollRollMode ?? roll.options?.rollMode ?? game.settings.get("core", "rollMode");
+        const rollRollMode = roll.options?.rollMode ?? game.settings.get("core", "rollMode");
         if (rollRollMode == CONST.DICE_ROLL_MODES.BLIND) return true;
         const dieTerms = this.getTermsRecursive(terms);
         if (!dieTerms.length || getSetting("manualRollMode") == 0) return true;
@@ -32,17 +46,14 @@ export class RealRoll extends FormApplication {
 
     static getTermsRecursive(terms) {
         const dieTerms = [];
-        //traverse object and arrays and find all die terms
         const traverse = (obj) => {
-            if(!obj) return;
-            const constructorName = obj.constructor.name;
-            if(constructorName === "PoolTerm" || constructorName === "InstancePool") return;
-            if (obj instanceof Die) dieTerms.push(obj);
-            else if (obj instanceof Array) obj.forEach(traverse);
-            else if (obj instanceof Object) Object.values(obj).forEach(traverse);
+            for (const o of obj) {
+                if(o instanceof Die && !o._processing) dieTerms.push(o);
+                if("dice" in o) traverse(o.dice);
+            }
         };
         traverse(terms);
-        return Array.from(new Set(dieTerms));
+        return dieTerms;
     }
 
     async prompt() {

@@ -14,9 +14,7 @@ export function initConfig() {
 
     registerKeyBindings();
 
-    libWrapper.register(MODULE_ID, 'Roll.prototype._evaluate', _evaluate, "MIXED");
-
-    libWrapper.register(MODULE_ID, 'Roll.prototype.toMessage', toMessage)
+    libWrapper.register(MODULE_ID, 'Roll.prototype._evaluate', _evaluate, "WRAPPER");
 
     rollModeToggleEl.setAttribute("role", "button");
     rollModeToggleEl.setAttribute("tooltip-direction", "UP");
