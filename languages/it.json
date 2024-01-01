@@ -55,6 +55,15 @@
                 },
                 "hint": "La posizione della finestra dei dadi reali.",
                 "name": "Posizione"
+            },
+            "disableInCombat": {
+                "hint": "Se abilitato, il modulo verrà disabilitato durante il combattimento.",
+                "name": "Disabilita in combattimento"
+            },
+            "realDiceConfig": {
+                "hint": "Configura quali dadi lanciare manualmente",
+                "label": "Configura",
+                "name": "Configurazione dei dadi"
             }
         },
         "keybindings": {

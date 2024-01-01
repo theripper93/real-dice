@@ -1,5 +1,6 @@
 import { MODULE_ID } from "./main";
 import {getSetting} from "./settings";
+import { RealDiceConfig } from "./realDiceConfig";
 
 const DIE_IMAGES = {
     2: "../modules/real-dice/assets/two-coins.svg",
@@ -36,24 +37,33 @@ export class RealRoll extends FormApplication {
     }
 
     static async prompt(terms, roll) {
-        const rollRollMode = roll.options?.rollMode ?? game.settings.get("core", "rollMode");
-        if (rollRollMode == CONST.DICE_ROLL_MODES.BLIND) return true;
-        const dieTerms = this.getTermsRecursive(terms);
-        if (!dieTerms.length || getSetting("manualRollMode") == 0) return true;
-        const realRoll = new RealRoll(dieTerms);
-        return realRoll.prompt();
+        try {            
+            const rollRollMode = roll.options?.rollMode ?? game.settings.get("core", "rollMode");
+            if (rollRollMode == CONST.DICE_ROLL_MODES.BLIND) return true;
+            if (game.combat?.started && getSetting("disableInCombat")) return true;
+            const dieTerms = this.getTermsRecursive(terms);
+            if (!dieTerms.length || getSetting("manualRollMode") == 0) return true;
+            const realRoll = new RealRoll(dieTerms);
+            return realRoll.prompt();
+        }catch(e) {
+            return true;
+        }
     }
 
     static getTermsRecursive(terms) {
         const dieTerms = [];
         const traverse = (obj) => {
+            if (!obj) return;
             for (const o of obj) {
                 if(o instanceof Die && !o._processing) dieTerms.push(o);
                 if("dice" in o) traverse(o.dice);
             }
         };
         traverse(terms);
-        return dieTerms;
+        const diceConfig = getSetting(RealDiceConfig.SETTING_KEY);
+        return dieTerms.filter((term) => {
+            return diceConfig[`d${term.faces}`] ?? diceConfig.other;
+        });
     }
 
     async prompt() {

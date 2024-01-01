@@ -7,7 +7,6 @@ const rollModeToggleEl = document.createElement("a");
 const REAL_ROLL_MODE_ICONS = {
     0: "fas fa-square-xmark",
     1: "fas fa-dice",
-    2: "fas fa-square-question",
 };
 
 export function initConfig() {
@@ -24,7 +23,7 @@ export function initConfig() {
 
     rollModeToggleEl.addEventListener("click", () => {
         const currentRollMode = getSetting("manualRollMode");
-        const realRollMode = (currentRollMode + 1) % 3;
+        const realRollMode = (currentRollMode + 1) % 2;
         setSetting("manualRollMode", realRollMode);
     });
 
@@ -60,7 +59,7 @@ function registerKeyBindings() {
         onDown: () => {},
         onUp: () => {
             const currentRollMode = getSetting("manualRollMode");
-            const realRollMode = (currentRollMode + 1) % 3;
+            const realRollMode = (currentRollMode + 1) % 2;
             setSetting("manualRollMode", realRollMode);
         },
     });

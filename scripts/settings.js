@@ -1,5 +1,6 @@
 import {MODULE_ID} from "./main.js";
-import { updateRealRollMode } from "./config.js";
+import {updateRealRollMode} from "./config.js";
+import { RealDiceConfig } from "./realDiceConfig.js";
 
 export function registerSettings() {
 
@@ -28,13 +29,20 @@ export function registerSettings() {
             choices: {
                 0: `${MODULE_ID}.settings.manualRollMode.choices.0`,
                 1: `${MODULE_ID}.settings.manualRollMode.choices.1`,
-                2: `${MODULE_ID}.settings.manualRollMode.choices.2`,
             },
             onChange: () => updateRealRollMode(),
         },
         "enableTotalBox": {
             name: `${MODULE_ID}.settings.enableTotalBox.name`,
             hint: `${MODULE_ID}.settings.enableTotalBox.hint`,
+            scope: "world",
+            config: true,
+            type: Boolean,
+            default: false,
+        },
+        "disableInCombat": {
+            name: `${MODULE_ID}.settings.disableInCombat.name`,
+            hint: `${MODULE_ID}.settings.disableInCombat.hint`,
             scope: "world",
             config: true,
             type: Boolean,
@@ -89,6 +97,8 @@ export function registerSettings() {
     };
 
     registerSettingsArray(settings);
+
+    RealDiceConfig.register();
 
     updateColorVar();
 }

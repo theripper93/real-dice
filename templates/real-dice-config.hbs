@@ -1,0 +1,67 @@
+<form action="submit">
+
+    <div class="form-group">
+            <label>d4</label>
+            <div class="form-fields">
+                <input type="checkbox" name="d4" {{#if d4}}checked{{/if}}>
+            </div>
+    </div>
+
+    <div class="form-group">
+            <label>d6</label>
+            <div class="form-fields">
+                <input type="checkbox" name="d6" {{#if d6}}checked{{/if}}>
+            </div>
+    </div>
+
+    <div class="form-group">
+            <label>d8</label>
+            <div class="form-fields">
+                <input type="checkbox" name="d8" {{#if d8}}checked{{/if}}>
+            </div>
+
+    </div>
+
+    <div class="form-group">
+            <label>d10</label>
+            <div class="form-fields">
+                <input type="checkbox" name="d10" {{#if d10}}checked{{/if}}>
+            </div>
+    </div>
+
+    <div class="form-group">
+            <label>d12</label>
+            <div class="form-fields">
+                <input type="checkbox" name="d12" {{#if d12}}checked{{/if}}>
+            </div>
+    </div>
+
+    <div class="form-group">
+            <label>d20</label>
+            <div class="form-fields">
+                <input type="checkbox" name="d20" {{#if d20}}checked{{/if}}>
+            </div>
+
+    </div>
+
+    <div class="form-group">
+            <label>d100</label>
+            <div class="form-fields">
+                <input type="checkbox" name="d100" {{#if d100}}checked{{/if}}>
+            </div>
+    </div>
+
+    <div class="form-group">
+            <label>Other</label>
+            <div class="form-fields">
+                <input type="checkbox" name="other" {{#if other}}checked{{/if}}>
+            </div>
+    </div>
+
+
+
+
+    <footer>
+        <button type="submit"><i class="fas fa-check"></i> {{localize "Confirm"}}</button>
+    </footer>
+</form>

@@ -55,6 +55,15 @@
                 },
                 "hint": "La position de la fenêtre Real Dice.",
                 "name": "Position"
+            },
+            "disableInCombat": {
+                "hint": "S'il est activé, le module sera désactivé pendant le combat.",
+                "name": "Désactiver au combat"
+            },
+            "realDiceConfig": {
+                "hint": "Configurer quels dés doivent être lancés manuellement",
+                "label": "Configurer",
+                "name": "Configuration des dés"
             }
         },
         "keybindings": {

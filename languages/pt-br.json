@@ -55,6 +55,15 @@
                 },
                 "hint": "A posição da janela Dados reais.",
                 "name": "Posição"
+            },
+            "disableInCombat": {
+                "hint": "Se habilitado, o módulo será desabilitado durante o combate.",
+                "name": "Desativar em combate"
+            },
+            "realDiceConfig": {
+                "hint": "Configure quais dados devem ser lançados manualmente",
+                "label": "Configurar",
+                "name": "Configuração de dados"
             }
         },
         "keybindings": {

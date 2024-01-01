@@ -14,6 +14,10 @@
                     "2": "Ask"
                 }
             },
+            "disableInCombat": {
+                "name": "Disable In Combat",
+                "hint": "If enabled, the module will be disabled during combat."
+            },
             "position": {
                 "name": "Position",
                 "hint": "The position of the Real Dice window.",
@@ -41,6 +45,11 @@
             "themeColor": {
                 "name": "Theme Color",
                 "hint": "The accent color of the theme."
+            },
+            "realDiceConfig": {
+                "name": "Dice Configuration",
+                "hint": "Configure which dice should be rolled manually",
+                "label": "Configure"
             }
         },
         "real-roll": {

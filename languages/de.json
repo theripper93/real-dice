@@ -55,6 +55,15 @@
                 },
                 "hint": "Die Position des Real Dice-Fensters.",
                 "name": "Position"
+            },
+            "disableInCombat": {
+                "hint": "Wenn aktiviert, wird das Modul während des Kampfes deaktiviert.",
+                "name": "Im Kampf deaktivieren"
+            },
+            "realDiceConfig": {
+                "hint": "Konfigurieren Sie, welche Würfel manuell gewürfelt werden sollen",
+                "label": "Konfigurieren",
+                "name": "Würfelkonfiguration"
             }
         },
         "keybindings": {

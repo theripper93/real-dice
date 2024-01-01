@@ -55,6 +55,15 @@
                 },
                 "hint": "La posición de la ventana de Real Dice.",
                 "name": "Posición"
+            },
+            "disableInCombat": {
+                "hint": "Si está habilitado, el módulo se desactivará durante el combate.",
+                "name": "Desactivar en combate"
+            },
+            "realDiceConfig": {
+                "hint": "Configurar qué dados se deben tirar manualmente",
+                "label": "Configurar",
+                "name": "Configuración de dados"
             }
         },
         "keybindings": {
