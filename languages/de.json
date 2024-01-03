@@ -64,6 +64,10 @@
                 "hint": "Konfigurieren Sie, welche Würfel manuell gewürfelt werden sollen",
                 "label": "Konfigurieren",
                 "name": "Würfelkonfiguration"
+            },
+            "showFormula": {
+                "hint": "Wenn diese Option aktiviert ist, wird die Formel der Rolle oben im manuellen Rollenfenster angezeigt.",
+                "name": "Formel anzeigen"
             }
         },
         "keybindings": {

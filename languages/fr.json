@@ -64,6 +64,10 @@
                 "hint": "Configurer quels dés doivent être lancés manuellement",
                 "label": "Configurer",
                 "name": "Configuration des dés"
+            },
+            "showFormula": {
+                "hint": "Si cette option est activée, la formule du lancer sera affichée en haut de la fenêtre du lancer manuel.",
+                "name": "Montrer la formule"
             }
         },
         "keybindings": {

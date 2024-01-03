@@ -64,6 +64,10 @@
                 "hint": "Configure quais dados devem ser lançados manualmente",
                 "label": "Configurar",
                 "name": "Configuração de dados"
+            },
+            "showFormula": {
+                "hint": "Se ativado, a fórmula da rolagem será mostrada na parte superior da janela da rolagem manual.",
+                "name": "Mostrar Fórmula"
             }
         },
         "keybindings": {

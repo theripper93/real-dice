@@ -17,6 +17,11 @@
   padding: 0;
   overflow: hidden;
 }
+.real-roll.themed-mode .real-roll-formula {
+  color: var(--real-roll-theme-accent);
+  font-size: medium;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+}
 .real-roll.themed-mode button {
   border: 1px solid rgba(255, 255, 255, 0.1411764706);
   border-radius: 0;
@@ -42,6 +47,10 @@
 }
 .real-roll.themed-mode .real-roll-input:focus, .real-roll.themed-mode .real-roll-input:hover, .real-roll.themed-mode .real-roll-input:active {
   filter: drop-shadow(0px 0px 5px var(--real-roll-theme-accent));
+}
+.real-roll .real-roll-formula {
+  text-align: center;
+  padding-top: 0.5rem;
 }
 .real-roll .form-group {
   gap: 0.3rem;

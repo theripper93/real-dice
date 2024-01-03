@@ -30,6 +30,10 @@
                 "name": "Enable Total Box",
                 "hint": "If enabled, a box will be shown where you can enter the total of the roll. The module will then generate a roll that adds up to that total."
             },
+            "showFormula": {
+                "name": "Show Formula",
+                "hint": "If enabled, the formula of the roll will be shown in the top of the manual roll window."
+            },
             "showMessage": {
                 "name": "Show Message",
                 "hint": "If enabled, a message will be shown in the chat to the GM when a player rolls manually."

@@ -14,9 +14,10 @@ const DIE_IMAGES = {
 };
 
 export class RealRoll extends FormApplication {
-    constructor(dieTerms) {
+    constructor(dieTerms, roll) {
         super();
         this.dieTerms = dieTerms;
+        this.roll = roll;
         this.dieTerms.forEach((term) => {
             term.exploding = (term.modifiers ?? []).includes("x");
             term.inputs = Array.from({length: term.number}, () => term.faces);
@@ -43,7 +44,7 @@ export class RealRoll extends FormApplication {
             if (game.combat?.started && getSetting("disableInCombat")) return true;
             const dieTerms = this.getTermsRecursive(terms);
             if (!dieTerms.length || getSetting("manualRollMode") == 0) return true;
-            const realRoll = new RealRoll(dieTerms);
+            const realRoll = new RealRoll(dieTerms, roll);
             return realRoll.prompt();
         }catch(e) {
             return true;
@@ -118,7 +119,7 @@ export class RealRoll extends FormApplication {
     }
 
     async getData() {
-        return { dieTerms: this.dieTerms, multiRow: this.dieTerms.length > 1 };
+        return { rollFormula: getSetting("showFormula") ? this.roll.formula : null, dieTerms: this.dieTerms, multiRow: this.dieTerms.length > 1 };
     }
 
     activateListeners(html) {

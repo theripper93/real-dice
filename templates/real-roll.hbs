@@ -1,5 +1,7 @@
 <form action="submit">
 
+    {{#if rollFormula}}<p class="real-roll-formula notes">{{rollFormula}}</p>{{/if}}
+
     <div class="real-roll-container {{#if multiRow}}real-roll-multi-row{{/if}}">
 
         {{#each dieTerms as |dieTerm|}}

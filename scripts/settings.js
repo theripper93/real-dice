@@ -40,6 +40,14 @@ export function registerSettings() {
             type: Boolean,
             default: false,
         },
+        "showFormula": {
+            name: `${MODULE_ID}.settings.showFormula.name`,
+            hint: `${MODULE_ID}.settings.showFormula.hint`,
+            scope: "world",
+            config: true,
+            type: Boolean,
+            default: false,
+        },
         "disableInCombat": {
             name: `${MODULE_ID}.settings.disableInCombat.name`,
             hint: `${MODULE_ID}.settings.disableInCombat.hint`,

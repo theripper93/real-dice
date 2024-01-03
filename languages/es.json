@@ -64,6 +64,10 @@
                 "hint": "Configurar qué dados se deben tirar manualmente",
                 "label": "Configurar",
                 "name": "Configuración de dados"
+            },
+            "showFormula": {
+                "hint": "Si está habilitado, la fórmula del rollo se mostrará en la parte superior de la ventana del rollo manual.",
+                "name": "Mostrar fórmula"
             }
         },
         "keybindings": {

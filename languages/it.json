@@ -64,6 +64,10 @@
                 "hint": "Configura quali dadi lanciare manualmente",
                 "label": "Configura",
                 "name": "Configurazione dei dadi"
+            },
+            "showFormula": {
+                "hint": "Se abilitato, la formula del lancio verrà mostrata nella parte superiore della finestra del lancio manuale.",
+                "name": "Mostra la formula"
             }
         },
         "keybindings": {
