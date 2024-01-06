@@ -68,6 +68,10 @@
             "showFormula": {
                 "hint": "Si cette option est activée, la formule du lancer sera affichée en haut de la fenêtre du lancer manuel.",
                 "name": "Montrer la formule"
+            },
+            "showMessagePlayers": {
+                "hint": "S'il est activé, le message sera également affiché aux joueurs.",
+                "name": "Afficher le message aux joueurs"
             }
         },
         "keybindings": {

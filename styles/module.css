@@ -96,6 +96,7 @@
 }
 
 .chat-message:has(.real-roll-message) {
+  background: transparent;
   background-color: var(--real-roll-message-color);
 }
 .chat-message:has(.real-roll-message) .message-header {

@@ -68,6 +68,10 @@
             "showFormula": {
                 "hint": "Wenn diese Option aktiviert ist, wird die Formel der Rolle oben im manuellen Rollenfenster angezeigt.",
                 "name": "Formel anzeigen"
+            },
+            "showMessagePlayers": {
+                "hint": "Wenn aktiviert, wird die Nachricht auch den Spielern angezeigt.",
+                "name": "Nachricht an Spieler anzeigen"
             }
         },
         "keybindings": {

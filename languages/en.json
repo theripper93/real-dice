@@ -38,6 +38,10 @@
                 "name": "Show Message",
                 "hint": "If enabled, a message will be shown in the chat to the GM when a player rolls manually."
             },
+            "showMessagePlayers": {
+                "name": "Show Message To Players",
+                "hint": "If enabled, the message will be shown to players as well."
+            },
             "messageColor": {
                 "name": "Message Color",
                 "hint": "The color of the message shown in the chat to the GM when a player rolls manually."

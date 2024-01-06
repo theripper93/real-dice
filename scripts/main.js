@@ -25,7 +25,7 @@ Hooks.on("setup", () => {
 });
 
 Hooks.on("ready", () => {
-    if (game.user.isGM) {
+    if (game.user.isGM || getSetting("showMessagePlayers")) {
         document.head.removeChild(messageStyle);
     }
     if (!game.user.isGM && getSetting("gmOnly")) {

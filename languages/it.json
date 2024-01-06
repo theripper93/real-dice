@@ -68,6 +68,10 @@
             "showFormula": {
                 "hint": "Se abilitato, la formula del lancio verrà mostrata nella parte superiore della finestra del lancio manuale.",
                 "name": "Mostra la formula"
+            },
+            "showMessagePlayers": {
+                "hint": "Se abilitato, il messaggio verrà mostrato anche ai giocatori.",
+                "name": "Mostra messaggio ai giocatori"
             }
         },
         "keybindings": {

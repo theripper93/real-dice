@@ -68,6 +68,10 @@
             "showFormula": {
                 "hint": "Si está habilitado, la fórmula del rollo se mostrará en la parte superior de la ventana del rollo manual.",
                 "name": "Mostrar fórmula"
+            },
+            "showMessagePlayers": {
+                "hint": "Si está habilitado, el mensaje también se mostrará a los jugadores.",
+                "name": "Mostrar mensaje a los jugadores"
             }
         },
         "keybindings": {

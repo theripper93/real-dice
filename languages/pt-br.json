@@ -68,6 +68,10 @@
             "showFormula": {
                 "hint": "Se ativado, a fórmula da rolagem será mostrada na parte superior da janela da rolagem manual.",
                 "name": "Mostrar Fórmula"
+            },
+            "showMessagePlayers": {
+                "hint": "Se ativado, a mensagem também será mostrada aos jogadores.",
+                "name": "Mostrar mensagem aos jogadores"
             }
         },
         "keybindings": {

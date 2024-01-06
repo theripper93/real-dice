@@ -76,6 +76,14 @@ export function registerSettings() {
             type: Boolean,
             default: true,
         },
+        "showMessagePlayers": {
+            name: `${MODULE_ID}.settings.showMessagePlayers.name`,
+            hint: `${MODULE_ID}.settings.showMessagePlayers.hint`,
+            scope: "world",
+            config: true,
+            type: Boolean,
+            default: false,
+        },
         "messageColor": {
             name: `${MODULE_ID}.settings.messageColor.name`,
             hint: `${MODULE_ID}.settings.messageColor.hint`,
