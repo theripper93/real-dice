@@ -3,15 +3,15 @@
         "buttons": {
             "realRollToggle": {
                 "tooltips": {
-                    "0": "Mode de rouleau manuel : Désactivé<hr> Tous les rouleaux seront automatiques.",
-                    "1": "Mode de rouleau manuel : activé<hr> Tous les rouleaux seront manuels.",
-                    "2": "Mode de roulement manuel : Demander<hr> Il vous sera demandé si vous souhaitez rouler manuellement ou automatiquement."
+                    "0": "Mode de jet manuel : Désactivé<hr> Tous les jets seront automatiques.",
+                    "1": "Mode de jet manuel : activé<hr> Tous les jets seront manuels.",
+                    "2": "Mode de jet manuel : Demander<hr> Il vous sera demandé si vous souhaitez rouler manuellement ou automatiquement."
                 }
             }
         },
         "real-roll": {
             "realRollMessage": "a roulé manuellement.",
-            "title": "De vrais dés",
+            "title": "Real Dice",
             "totalBoxMessage": "Entrez le total du lancer au lieu des résultats individuels."
         },
         "settings": {
@@ -21,15 +21,15 @@
                     "1": "Toujours",
                     "2": "Demander"
                 },
-                "hint": "Si cette option est activée, vous devrez cliquer sur le bouton Lancer pour lancer les dés. \nS'ils sont désactivés, les dés lanceront automatiquement lorsque vous les relâcherez.",
-                "name": "Mode rouleau manuel"
+                "hint": "Si cette option est activée, vous devrez cliquer sur le bouton Lancer pour lancer les dés. \nSi cette option est désactivée, les dés se lanceront automatiquement lorsque vous les relâcherez.",
+                "name": "Mode de jet manuel"
             },
             "messageColor": {
-                "hint": "La couleur du message affiché dans le chat au MJ lorsqu'un joueur lance manuellement.",
+                "hint": "La couleur du message affiché dans le chat au MJ lorsqu'un joueur roule manuellement.",
                 "name": "Couleur des messages"
             },
             "showMessage": {
-                "hint": "Si activé, un message sera affiché dans le chat au MJ lorsqu'un joueur lance manuellement.",
+                "hint": "Si activé, un message sera affiché dans le chat au MJ lorsqu'un joueur roule manuellement.",
                 "name": "Voir le message"
             },
             "themeColor": {
@@ -45,7 +45,7 @@
                 "name": "Activer la boîte totale"
             },
             "gmOnly": {
-                "hint": "Si activé, seul le MJ pourra lancer manuellement.",
+                "hint": "Si activé, seul le MJ pourra rouler manuellement.",
                 "name": "GM seulement"
             },
             "position": {
@@ -57,7 +57,7 @@
                 "name": "Position"
             },
             "disableInCombat": {
-                "hint": "S'il est activé, le module sera désactivé pendant le combat.",
+                "hint": "Si cette option est activée, le module sera désactivé pendant le combat.",
                 "name": "Désactiver au combat"
             },
             "realDiceConfig": {
@@ -70,13 +70,13 @@
                 "name": "Montrer la formule"
             },
             "showMessagePlayers": {
-                "hint": "S'il est activé, le message sera également affiché aux joueurs.",
+                "hint": "Si cette option est activée, le message sera également affiché aux joueurs.",
                 "name": "Afficher le message aux joueurs"
             }
         },
         "keybindings": {
             "toggleRollMode": {
-                "name": "Basculer le mode de rouleau manuel"
+                "name": "Basculer le mode de jet manuel"
             }
         }
     }
